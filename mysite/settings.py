@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 import dj_database_url
+import cloudinary
+import cloudinary_storage
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-5##44^qgifi$tjzi$d9v@c%jck+05@(8y$qg(2b-*g9vs1gb_t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -34,6 +36,8 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'myapp',
     'registration',
+    'cloudinary',
+    'cloudinary_storage',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -136,6 +140,14 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+# Cloudinary stuff
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'codetest',
+    'API_KEY': '511687579955994',
+    'API_SECRET': 'NWCflDG8nUaJ4xn7YqsLJ9qT_sw',
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
