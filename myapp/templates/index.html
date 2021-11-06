@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid">
+	<div class="row">
+	{% for i in posts %}
+		<div class="col-6">
+		<a href="{% url 'myapp:postdetail' i.pk %}">{{i.title}}</a>
+		<br>
+
+		<img src="{{i.image.url}}" height="500" width="500"><br>
+		</div>
+	{% endfor %}
+	</div>
+</div>
+
+{% endblock %}
+
