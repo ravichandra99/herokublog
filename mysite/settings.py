@@ -147,5 +147,5 @@ EMAIL_HOST_PASSWORD = 'jyppeoscgghmqlbf'
 EMAIL_USE_TLS = True
 REGISTRATION_EMAIL_SUBJECT_PREFIX = '[Myapp]'
 
-if DEBUG:
-    from .local_settings import *
+# if DEBUG:
+#     from .local_settings import *
