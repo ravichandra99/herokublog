@@ -147,5 +147,8 @@ EMAIL_HOST_PASSWORD = 'jyppeoscgghmqlbf'
 EMAIL_USE_TLS = True
 REGISTRATION_EMAIL_SUBJECT_PREFIX = '[Myapp]'
 
-# if DEBUG:
-#     from .local_settings import *
+db_from_env = dj_database_url.config(conn_max_age = 500)
+DATABASES['default'].update(db_from_env)
+
+if DEBUG:
+    from .local_settings import *
